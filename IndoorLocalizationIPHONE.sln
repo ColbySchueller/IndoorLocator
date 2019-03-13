@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndoorLocalizationIPHONE", "IndoorLocalizationIPHONE\IndoorLocalizationIPHONE.csproj", "{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Release|iPhone.Build.0 = Release|iPhone
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0F4E2BAC-DD75-4A4B-8CA6-83E5E853595A}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
