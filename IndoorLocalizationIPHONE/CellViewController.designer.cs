@@ -11,27 +11,18 @@ using UIKit;
 
 namespace IndoorLocalizationIPHONE
 {
-    [Register ("ClassCell")]
-    partial class ClassCell
+    [Register ("CellViewController")]
+    partial class CellViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel cellClass { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView cellIcon { get; set; }
+        UIKit.UILabel cellviewTitle { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (cellClass != null) {
-                cellClass.Dispose ();
-                cellClass = null;
-            }
-
-            if (cellIcon != null) {
-                cellIcon.Dispose ();
-                cellIcon = null;
+            if (cellviewTitle != null) {
+                cellviewTitle.Dispose ();
+                cellviewTitle = null;
             }
         }
     }

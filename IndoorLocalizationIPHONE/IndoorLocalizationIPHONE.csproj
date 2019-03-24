@@ -150,13 +150,16 @@
     <Compile Include="TableViewCell.designer.cs">
       <DependentUpon>TableViewCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="CellViewController.cs" />
+    <Compile Include="CellViewController.designer.cs">
+      <DependentUpon>CellViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="..\..\..\Downloads\symbol-remove-red-minus-512.png">
       <Link>Resources\symbol-remove-red-minus-512.png</Link>
     </BundleResource>
     <BundleResource Include="Resources\148781.png" />
-    <BundleResource Include="Resources\rwanda-plus-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />

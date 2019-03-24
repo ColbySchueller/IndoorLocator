@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using CoreGraphics;
 using Foundation;
 using MapKit;
@@ -9,7 +11,6 @@ namespace IndoorLocalizationIPHONE
 {
     public partial class FirstViewController : UIViewController
     {
-        
         protected FirstViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -39,10 +40,6 @@ namespace IndoorLocalizationIPHONE
                 tableViewClasses.EstimatedRowHeight = 40f;
                 tableViewClasses.ReloadData();
             }
-
-
-
-
         }
 
        
@@ -59,19 +56,17 @@ namespace IndoorLocalizationIPHONE
 
     public class TableSource : UITableViewSource
     {
-        public List<Class> vList { get; set; }
-        List<bool> expandStatusList; // Maintain a list which keeps track if a section is expanded or not
-
+        public List<Class> vList;
+        public static Class SelectedRow;
         string CellIdentifier = "TableCell";
 
-
+       
         public TableSource(List<Class> items)
         {
             vList = items;
-            expandStatusList = new List<bool>();
-            for (int i = 0; i < vList.Count; i++)
+            for (int i = 0; i < items.Count; i++)
             {
-                expandStatusList.Add(false); // Initially, no section are expanded
+                Debug.WriteLine("Initialize List: "  + items[i].ClassName);
             }
         }
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -80,11 +75,34 @@ namespace IndoorLocalizationIPHONE
             var temp = vList[indexPath.Row];
             cell.BackgroundColor = UIColor.FromRGB(232, 237, 239);
             cell.UpdateCell(temp);
+            
             return cell;
         }
         public override nint RowsInSection(UITableView tableview, nint section)
         {
             return vList.Count;
+        }
+        //Return Selected Row
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            SelectedRow = vList[indexPath.Row];
+            DataPass.currentClass = vList[indexPath.Row];
+            Debug.WriteLine("Selected Row: " + vList[indexPath.Row].ClassName);
+        }
+        public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, Foundation.NSIndexPath indexPath)
+        {
+            switch (editingStyle)
+            {
+                case UITableViewCellEditingStyle.Delete:
+                    // remove the item from the underlying data source
+                    vList.RemoveAt(indexPath.Row);
+                    // delete the row from the table
+                    tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
+                    break;
+                case UITableViewCellEditingStyle.None:
+                    Console.WriteLine("CommitEditingStyle:None called");
+                    break;
+            }
         }
 
 

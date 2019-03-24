@@ -16,8 +16,7 @@ namespace IndoorLocalizationIPHONE
             textFieldReview.Text = "University: " + DataPass.University + "\n" +
                 "Campus: " + DataPass.Campus + "\n" +
                  "Building: " + DataPass.Building + "\n" +
-                 "Room: " + DataPass.ClassName + "\n" +
-                "Name: " + DataPass.Name + "\n";
+                 "Room: " + DataPass.ClassName + "\n";
 
         }
       

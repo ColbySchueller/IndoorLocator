@@ -29,15 +29,20 @@ namespace IndoorLocalizationIPHONE
 
         partial void NextReview_TouchUpInside(UIButton sender)
         {
-
+            //Set Static Variables to class DataPass
             DataPass.University = textFieldUniversity.Text;
             DataPass.Campus = textFieldCampus.Text;
+            DataPass.ClassName = textFieldClass.Text;
             DataPass.Building = textFieldBuilding.Text;
-            DataPass.ClassName = textFieldRoom.Text;
-            DataPass.Name = textFieldClass.Text;
-            //Add class
+            DataPass.Room = textFieldRoom.Text;
+
+            //Add class to table view list
             Class temp = new Class();
-            temp.ClassName = DataPass.Name;
+            temp.University = DataPass.University;
+            temp.Campus = DataPass.Campus;
+            temp.ClassName = DataPass.ClassName;
+            temp.Building = DataPass.Building;
+            temp.Room = DataPass.Room;
             DataPass.list.Add(temp);
             Debug.WriteLine(textFieldUniversity.Text + ":" + textFieldBuilding.Text + ":" + textFieldCampus.Text + ":" + textFieldClass.Text + ":" + textFieldRoom.Text);
 

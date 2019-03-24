@@ -12,7 +12,7 @@ namespace IndoorLocalizationIPHONE
         internal void UpdateCell(Class obj)
         {
             cellClass.Text = obj.ClassName;
-            cellIcon.Image = UIImage.FromFile("rwanda-plus-icon.png");
+            cellIcon.Image = UIImage.FromFile("148781.png");
         }
     }
 }
